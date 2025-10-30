@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cancer Detection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f3f6fc;
+            text-align: center;
+            margin-top: 80px;
+        }
+        form {
+            background: white;
+            display: inline-block;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+        input {
+            margin: 8px;
+            padding: 10px;
+            width: 200px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧬 Cancer Detection System</h1>
+    <form action="/predict" method="post">
+        <input type="text" name="value1" placeholder="Enter feature 1" required><br>
+        <input type="text" name="value2" placeholder="Enter feature 2" required><br>
+        <input type="text" name="value3" placeholder="Enter feature 3" required><br>
+        <input type="text" name="value4" placeholder="Enter feature 4" required><br>
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction_text %}
+        <h2>Result: {{ prediction_text }}</h2>
+    {% endif %}
+</body>
+</html>
